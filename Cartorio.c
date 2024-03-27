@@ -101,7 +101,7 @@ int deletar()
 	FILE *file; // Acessa o arquivo.
 	file = fopen(cpf,"r"); // Abre o arquivo para ler ("r").
 	
-	if(file == NULL)) // Validação para o caso de o arquivo não existir.
+	if(file == NULL) // Validação para o caso de o arquivo não existir.
 	{
 		printf("O usuário não se encontra no sistema!.\n");
 		system ("pause"); // Pausa o programa.
@@ -123,7 +123,8 @@ int main()
 		printf("Escolha a opção desejada do menu:\n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
+		printf("\t3 - Deletar nomes\n");
+		printf("\t4 - Sair do sistema\n\n");
 		printf("Opção: "); //Fim do menu
 		
 		scanf("%d", &opcao); // Armazenando a escolha do usuario.
@@ -143,9 +144,14 @@ int main()
 			case 3:
 				deletar(); // Chamada de função "deletar".
 				break;
+				
+			case 4:
+				printf("Obrigado por utilizar o sistema!\n"); // Encerramento do programa.
+				return 0;
+				break;
 			
 			default:
-				printf("Esta opção não esta disponível!\n");
+				printf("Esta opção não esta disponível!\n"); // Validação de retorno ao menu para qualquer número <1 e >4.
 				system("pause");
 				break;
 		} // Fim da seleção.
